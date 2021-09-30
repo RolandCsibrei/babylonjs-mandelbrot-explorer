@@ -62,8 +62,6 @@ export class MandelbrotExplorerScene extends BaseScene {
   }
 
   public setupRenderLoop() {
-    this._playMusic()
-
     this._engine.runRenderLoop(() => {
       this._scene.render()
     })
@@ -124,7 +122,6 @@ export class MandelbrotExplorerScene extends BaseScene {
     this._createProjectionCanvas()
     this._setupKeyboard()
     this._setupMouse()
-    this._playMusic()
   }
 
   private _createProjectionCanvas() {
@@ -341,8 +338,10 @@ export class MandelbrotExplorerScene extends BaseScene {
     }
   }
 
-  private _playMusic() {
-    this._music?.play()
+  public playMusic() {
+    if (!this._music?.isPlaying) {
+      this._music?.play()
+    }
   }
 
   private async _createSounds(): Promise<void> {

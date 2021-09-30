@@ -283,7 +283,7 @@ export default defineComponent({
         isLoading.value = false
 
         scene.loadIntroMusic(() => {
-          // scene.playIntroMusic()
+          scene.playIntroMusic()
           // startClassic()
         })
       }
@@ -357,6 +357,7 @@ export default defineComponent({
       window.requestAnimationFrame(fade)
 
       isStarted.value = true
+      scene.playMusic()
       setTimeout(() => {
         isGuiUnlocked.value = true
         const animInIdx = Math.floor(Math.random() * 3)
