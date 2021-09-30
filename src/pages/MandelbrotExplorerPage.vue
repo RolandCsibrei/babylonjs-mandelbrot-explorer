@@ -283,8 +283,7 @@ export default defineComponent({
         isLoading.value = false
 
         scene.loadIntroMusic(() => {
-          scene.playIntroMusic()
-
+          // scene.playIntroMusic()
           // startClassic()
         })
       }
@@ -366,7 +365,7 @@ export default defineComponent({
         const animOutIdx = Math.floor(Math.random() * 4)
         yellAnimOut.value = 'fadeOut' //['rollOut', 'zoomOutLeft', 'slideOutLeft', 'zoomOutDown'][animOutIdx]
 
-        yell.value = 'Drag with the left mouse to move around'
+        yell.value = 'Drag with the left mouse button to move around'
         yellColor.value = 'orange'
         yellShadowColor.value = 'orange'
         setTimeout(() => {
